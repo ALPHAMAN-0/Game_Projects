@@ -2,6 +2,20 @@
 
 A collection of game development projects built in Java.
 
+## Architecture / How it Works
+
+```mermaid
+stateDiagram-v2
+    [*] --> Idle
+    Idle --> Running: start
+    Running --> Paused: pause
+    Paused --> Running: resume
+    Running --> GameOver: lose
+    Running --> [*]: win
+    GameOver --> Idle: restart
+```
+
+
 ## Project 1: Flappy Bird
 
 A clone of the classic Flappy Bird game built with Java Swing. The player controls a bird that must navigate through randomly generated pipes without collision.
